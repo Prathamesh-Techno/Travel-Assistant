@@ -76,7 +76,7 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-st.caption("Your personal planner")
+st.caption("Your personal travel planner")
 
 location = st.text_input("Where do you want to go?")
 days_nr = st.number_input("How many days of trip?", min_value=1,value = None)
