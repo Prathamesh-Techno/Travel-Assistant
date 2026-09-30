@@ -76,18 +76,18 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-st.caption("Tumhara personal planner")
+st.caption("Your personal planner")
 
-location = st.text_input("Where do you wana go chipmunk")
-days_nr = st.number_input("How many days of trip", min_value=1, max_value=30)
+location = st.text_input("Where do you want to go?")
+days_nr = st.number_input("How many days of trip?", min_value=1,value = None)
 
-budget = st.selectbox("Select Budget", ["Luxury", "Moderate", "Budgeted"])
-travel_type = st.radio("Who are you travelling with", ["Family","Solo", "Friends"])
+budget = st.selectbox("Select budget type", ["Luxury", "Moderate", "Budgeted"],index = None)
+travel_type = st.radio("Select trip type", ["Family","Solo", "Friends"],index = None)
 
 prompt = f"""You are a Travel Planner, User is saying he/she wants to 
 go to {location} and for {days_nr} days , he is on a budget of type {budget}
 Travel Type is :  {travel_type}
-Plan a tripo and share answer in bullet format"""
+Plan a trip and share answer in bullet format"""
 
 if st.button("Plan Trip"):
     interaction = client.interactions.create(
@@ -96,9 +96,9 @@ if st.button("Plan Trip"):
         )
 
     with st.spinner("Wait for it...", show_time=True):
-        time.sleep(5)
+        time.sleep(3)
 
-    st.success("Vola !! here are some fab suiggestions")
+    st.success("Here are some Fab suiggestions for you!")
     st.write(interaction.output_text)
     
     
