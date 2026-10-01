@@ -83,7 +83,7 @@ location = st.text_input("Enter your current location")
 destination = st.text_input("Enter your destination")
 days_nr = st.number_input("How many days of trip?", min_value = 1, value = None)
 budget_type = st.selectbox("Select budget type", ["Luxury", "Moderate", "Budgeted"],index = None)
-budget = st.slider("Select your exact budget",100,100000000,100,100)
+budget = st.slider("Select your exact budget",100,1000000,100,100)
 travel_type = st.radio("Select trip type", ["Family","Couple","Friends","Solo"],index = None)
 if travel_type == "Family" :
   member_nr = st.number_input("Enter number of family members", min_value = 2, value = None)
