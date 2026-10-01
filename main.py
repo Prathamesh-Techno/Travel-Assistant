@@ -81,13 +81,14 @@ st.caption("Your personal travel planner")
 
 location = st.text_input("Enter your current location")
 destination = st.text_input("Enter your destination")
-days_nr = st.number_input("How many days of trip?", min_value=1,value = None)
-
-budget = st.selectbox("Select budget type", ["Luxury", "Moderate", "Budgeted"],index = None)
+days_nr = st.number_input("How many days of trip?", min_value = 1, value = None)
+budget_type = st.selectbox("Select budget type", ["Luxury", "Moderate", "Budgeted"],index = None)
+budget = st.slider("Select your exact budget",100,100000000,100)
 travel_type = st.radio("Select trip type", ["Family","Couple","Friends","Solo"],index = None)
-
-prompt = f"""I wants to go to {destination} & my current location is {location} and for 
-{days_nr} days , I am on a budget of type {budget} , Travel Type is : {travel_type}"""
+if travel_type == "Family" :
+  member_nr = st.number_input("Enter number of family members", min_value = 2, value = None)
+prompt = f"""I wants to go to {destination} & my current location is {location} and for {days_nr} days ,
+I am on a budget of type {budget_type} and the budget is {budget} , Travel Type is : {travel_type}"""
 
 if st.button("Plan Trip"):
     with st.spinner("Processing..."):
@@ -98,7 +99,8 @@ if st.button("Plan Trip"):
 
             plan a travel and trip.Keep your response in three phases :
             First, guide user step by step to reaching on his/her desired destiny with real
-            locations and available travel services in that area (tell estimate cost at each step).
+            locations and available travel services in that area and from many ways of traveling & reaching to destiny,
+            suggest user the nearest,fastest,safest and minmum costly way (tell estimate cost at each step).
 
             Second, plan a detailed trip for the destination as per given number of day (
             In this one sujjest/plan a trip for locations to visit and so on at destination,
