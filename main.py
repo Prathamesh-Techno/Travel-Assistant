@@ -5,9 +5,9 @@ import time
 load_dotenv()
 client = genai.Client()
 st.set_page_config(
-    page_title="Prathamesh's App",  # Changes the browser tab name
-    page_icon="🚀",                 # Can be an emoji or a path to an image file
-    layout="wide"                 # Optional: "centered" or "wide"
+    page_title="Prathamesh's App",
+    page_icon="🚀",
+    layout="wide"
 )
 
 st.markdown(
