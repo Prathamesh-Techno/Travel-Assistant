@@ -135,11 +135,14 @@ if st.button("Plan Trip"):
             
             Take care of these conditions :
             If location and destination is same don't generate answer, politly respond like please give correct input, location and destination can't be same.
+            In little more and correct words in your way with use of emojies also.
             If any required information is missing (contain None) in requirements don't generate answer, politly respond like please fill all the necessary information.
+            In little more and correct words in your way with use of emojies also.
             If in any situation/way budget is insufficient then don't generate answer, politly respond like could you please uplift your budget a little more,
-            it's insufficient for ever posible way, you need minimum {minimum budget can sufficient for such trip} budget for this trip
+            it's insufficient for ever posible way, you need minimum {minimum budget can sufficient for such trip} budget for this trip.
+            In little more and correct words in your way with use of emojies also.
             If you fill some satrange in given requirements then don't generate answer, politly tell what strange thing you feel and correct it
-            politly in your way."""
+            politly in little more and correct words in your way with use of emojies also."""
       )
 
     st.success("Here is your required plan!")
