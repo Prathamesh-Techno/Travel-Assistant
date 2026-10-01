@@ -90,13 +90,11 @@ Travel Type is :  {travel_type}
 Plan a trip and share answer in bullet format"""
 
 if st.button("Plan Trip"):
-    interaction = client.interactions.create(
+    with st.spinner("Processing...", show_time=True):
+      interaction = client.interactions.create(
             model="gemini-3.5-flash-lite",
             input=prompt
         )
-
-    with st.spinner("Wait for it...", show_time=True):
-        time.sleep(3)
 
     st.success("Here are some Fab suiggestions for you!")
     st.write(interaction.output_text)
