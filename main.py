@@ -1,3 +1,4 @@
+
 import streamlit as st 
 from google import genai
 from dotenv import load_dotenv
@@ -78,27 +79,48 @@ st.markdown(
 
 st.caption("Your personal travel planner")
 
-location = st.text_input("Where do you want to go?")
+location = st.text_input("Enter your current location")
+destination = st.text_input("Enter your destination")
 days_nr = st.number_input("How many days of trip?", min_value=1,value = None)
 
 budget = st.selectbox("Select budget type", ["Luxury", "Moderate", "Budgeted"],index = None)
-travel_type = st.radio("Select trip type", ["Family","Solo", "Friends"],index = None)
+travel_type = st.radio("Select trip type", ["Family","Couple","Friends","Solo"],index = None)
 
-prompt = f"""You are a Travel Planner, User is saying he/she wants to 
-go to {location} and for {days_nr} days , he is on a budget of type {budget}
-Travel Type is :  {travel_type}
-Plan a trip and share answer in bullet format and keep subheadings font little
-big and include numbers as much as posible (Eg.,5days ,Rs.2000,1km (don't use these
-numbers and style it's just examples . Use perticular info related to given conditions))
-keep response more engaging by using little relavent emojies the user should not be board
-by too many words so keep your answer short but with covering all points smartly."""
+prompt = f"""I wants to go to {destination} & my current location is {location} and for 
+{days_nr} days , I am on a budget of type {budget} , Travel Type is : {travel_type}"""
 
 if st.button("Plan Trip"):
     with st.spinner("Processing..."):
       interaction = client.interactions.create(
             model="gemini-3.5-flash-lite",
-            input=prompt
-        )
+            input=prompt,
+            system_instruction="""You are a Experienced Travel and Trip Planner.As per given conditions,
+
+            plan a travel and trip.Keep your response in three phases :
+            First, guide user step by step to reaching on his/her desired destiny with real
+            locations and available travel services in that area (tell estimate cost at each step).
+
+            Second, plan a detailed trip for the destination as per given number of day (
+            In this one sujjest/plan a trip for locations to visit and so on at destination,
+            give ideas what to do on destination for given number of day
+            and tell estimated cost at every point you feel ex.for some food item).
+
+            Third, Total summary with budget estimation encluding travel and trip.It should contain both 
+            Total estimeted budget and estimeted budget for per person.
+            
+            Don't give title to or divide answer in these phases just remember your response should contain these 
+            three things.Keep phases in a constant flow without knowing to user that answer is divided in three phases.
+
+            Share answer in bullet format and keep subheadings font little 
+            big and include numbers as much as posible (Eg.,5days ,Rs.2000,1km (don't use these 
+            numbers and style it's just examples . Use perticular info related to given conditions)) 
+            keep response more engaging by using little relavent emojies the user should not be board 
+            by too many words so keep your answer short but with covering all points smartly.
+
+            Constraints :
+            Don't give response using bad and harsh words,avoide adulte wording.
+            Use cassual and simple language."""
+      )
 
     st.success("Here are some Fab suiggestions for you!")
     st.write(interaction.output_text)
