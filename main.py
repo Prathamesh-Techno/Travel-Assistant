@@ -86,16 +86,22 @@ budget_type = st.selectbox("Select budget type", ["Luxury", "Moderate", "Budgete
 budget = st.number_input("Enter your exact budget", min_value = 50, value = None)
 travel_type = st.radio("Select trip type", ["Family","Couple","Friends","Solo"],index = None)
 if travel_type == "Family" :
-  member_nr = st.number_input("Enter number of family members", min_value = 2, value = None)
+  travelers = st.number_input("Enter number of family members", min_value = 2, value = None)
+elif travel_type == "Couple" :
+  travelers = 2
+elif travel_type == "Friends" :
+  travelers = st.number_input("Enter number of friends going on trip", min_value = 2 , value = None)
+else :
+  travelers = 1
 prompt = f"""I wants to go to {destination} & my current location is {location} and for {days_nr} days ,
-I am on a budget of type {budget_type} and the budget is {budget} , Travel Type is : {travel_type}"""
+I am on a budget of type {budget_type} and the budget is {budget} , Travel Type is : {travel_type},Number of travelers is : {travelers}"""
 
 if st.button("Plan Trip"):
     with st.spinner("Processing..."):
       interaction = client.interactions.create(
             model="gemini-3.5-flash-lite",
             input=prompt,
-            system_instruction="""You are a Experienced Travel and Trip Planner.As per given conditions,
+            system_instruction="""You are a Experienced Travel and Trip Planner.As per the given requirements,
             plan a travel and trip.Keep your response in Four phases :
 
             First, guide user step by step to reaching on his/her desired destiny with real
@@ -119,16 +125,24 @@ if st.button("Plan Trip"):
 
             Share answer in bullet format and keep subheadings font size little 
             big and include numbers as much as posible (Eg.,5days ,Rs.2000,1km (don't use these 
-            numbers and style it's just examples . Use perticular info related to given conditions)) 
+            numbers and style it's just examples . Use perticular info related to given requirements)) 
             keep response more engaging by using little relavent emojies the user should not be bored 
             by too many words so keep your answer short but with covering all points smartly.
 
             Constraints :
             Don't give response using bad and harsh words,avoide adulte wording.
-            Use cassual and simple language."""
+            Use cassual and simple language.
+            
+            Take care of these conditions :
+            If location and destination is same don't generate answer, politly respond like please give correct input, location and destination can't be same.
+            If any required information is missing (contain None) in requirements don't generate answer, politly respond like please fill all the necessary information.
+            If in any situation/way budget is insufficient then don't generate answer, politly respond like could you please uplift your budget a little more,
+            it's insufficient for ever posible way, you need minimum {minimum budget can sufficient for such trip} budget for this trip
+            If you fill some satrange in given requirements then don't generate answer, politly tell what strange thing you feel and correct it
+            politly in your way."""
       )
 
-    st.success("Here are some Fab suiggestions for you!")
+    st.success("Here is your required plan!")
     st.write(interaction.output_text)
     
     
