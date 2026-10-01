@@ -101,7 +101,7 @@ if st.button("Plan Trip"):
       interaction = client.interactions.create(
             model="gemini-3.5-flash-lite",
             input=prompt,
-            system_instruction="""You are a Experienced Travel and Trip Planner.As per the given requirements,
+            system_instruction="""You are a Experienced Travel and Trip Planner.As per the given requirements (take them as it is don't assume them),
             plan a travel and trip.Keep your response in Four phases :
 
             First, guide user step by step to reaching on his/her desired destiny with real
