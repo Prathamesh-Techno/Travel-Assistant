@@ -90,8 +90,8 @@ Travel Type is :  {travel_type}
 Plan a trip and share answer in bullet format and keep subheadings font little
 big and include numbers as much as posible (Eg.,5days ,Rs.2000,1km (don't use these
 numbers and style it's just examples . Use perticular info related to given conditions))
-keep response more engaging the user should not be board by too many words 
-so keep your answer short but with covering all points smartly."""
+keep response more engaging by using little relavent emojies the user should not be board
+by too many words so keep your answer short but with covering all points smartly."""
 
 if st.button("Plan Trip"):
     with st.spinner("Processing..."):
