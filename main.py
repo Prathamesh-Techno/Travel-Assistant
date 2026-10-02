@@ -79,6 +79,7 @@ st.markdown(
 
 st.caption("Your personal travel planner")
 
+# All Inputs
 location = st.text_input("Enter your current location")
 destination = st.text_input("Enter your destination")
 days_nr = st.number_input("How many days of trip?", min_value = 1, value = None)
@@ -93,8 +94,16 @@ elif travel_type == "Friends" :
   travelers = st.number_input("Enter number of friends going on trip", min_value = 2 , value = None)
 else :
   travelers = 1
+travel_services = st.multiselect("Select your travel preferences", ["Car","Bike","Cab","Auto","Bus","Train",
+    "Metro","Online Travel Platform's Services","Bicycle","Walking","Flight","Boat","Private Jet","Private Helicopter","Private Boat"], index = None)
+purpose = st.selectbox("Select your purpose of travel", ["Trip","Enjoy","Fun","Party","Trekking","Exploring",
+    "Shoping","Photoshoot","Chilling","Work Related","Study Related","Just Visiting Place","Just Travelling From One Place To Another"], index = None)
+if purpose == "Other" :
+  purpose = st.text_input("Enter your purpose of travel")
+
 prompt = f"""I wants to go to {destination} & my current location is {location} and for {days_nr} days ,
-I am on a budget of type {budget_type} and the budget is {budget} , Travel Type is : {travel_type},Number of travelers is : {travelers}"""
+I am on a budget of type {budget_type} and the budget is {budget} , Travelling with {travel_type}, Number of travelers is : {travelers},
+I would prefer travelling by {travel_services} these services, my purpose of this travel is {purpose}"""
 
 if st.button("Plan Trip"):
     with st.spinner("Processing..."):
@@ -104,16 +113,16 @@ if st.button("Plan Trip"):
             system_instruction="""You are a Experienced Travel and Trip Planner.As per the given requirements (take them as it is don't assume them),
             plan a travel and trip.Keep your response in Four phases :
 
-            First, guide user step by step to reaching on his/her desired destiny with real
+            First, guide user step by step for reaching to his/her desired destiny as per prefered travelling services by him/her with real
             locations and available travel services in that area and from many ways of traveling & reaching to destiny,
             suggest user the nearest,fastest,safest and minmum costly way (tell estimate cost at each step).
 
-            Second, plan a detailed trip for the destination as per given number of day (
-            In this one sujjest/plan a trip for locations to visit and so on at destination,
+            Second, plan a detailed trip for the destination as per given number of day and required purpose
+            (In this one sujjest/plan a trip for locations to visit and so on at destination,
             give ideas what to do on destination for given number of day
             and tell estimated cost at every point you feel ex.for some food item).
 
-            Third, guide user step by step to returning to his/her location from destiny with real
+            Third, guide user step by step to returning to his/her location from destiny as per prefered travelling services by him/her with real
             locations and available travel services in that area and from many ways of traveling & reaching to destiny,
             suggest user the nearest,fastest,safest and minmum costly way (tell estimate cost at each step).
 
@@ -134,30 +143,25 @@ if st.button("Plan Trip"):
             Use cassual and simple language.
             Don't use technical words(language) related to coding and all.
             If you have to use requirements in response then don't use it in "",instead keep the words bold.
-            Don't use travelers word directly in response , instead use the relevant word for travelers as per given requirements.
+            Don't use travelers word directly in response, instead use the relevant word for travelers as per given requirements.
 
-            Take care of these conditions :
-            If location and destination is same don't generate answer, politly respond like please give correct input, location and destination can't be same,
-            In little more and correct words in your way with use of emojies also (don't use the given same line, respond it in your way).
-            If any required information is missing (contain None) in requirements don't generate answer, politly respond like please fill all the necessary information,
-            In little more and correct words in your way with use of emojies also (don't mention None in response and don't use the given same line, respond it in your way).
+            Take care of these conditions/things :
+            If location and destination is same don't generate answer, politly respod in littel more and correct words in your way with use of emojies also (don't make user's fool/laugh).
+            If any required information is missing (contain None) in requirements don't generate answer, politly respond in little more and correct words in your way with use of emojies also (don't make user's fool/laugh).
             If you fill some satrange in given requirements then don't generate answer, politly tell what strange thing you feel and correct it
             politly in little more and correct words in your way with use of emojies also (don't make user's fool/laugh).
             If budget type is budgeted then focus on saving money and fitting the trip in given budget while planing the trip and
             for that suggest the affordable/minimum costly and nearest travelling way instead of fastest, suggest the minimum costly stay and all.
+            if budget is fine then don't compromise things and traveling time.
             If budget type is moderate then focus on spending less money and fitting the trip in given budget while planing the trip and
             for that suggest the affordable/minimum costly and nearest travelling way as per budget instead of fastest, suggest the minimum costly stay and all as per budget;
             if budget is fine then don't compromise things and traveling time.
             If in any situation/way budget is insufficient then don't generate answer, politly respond like could you please uplift your budget a little more,
             it's insufficient for ever posible way, you need minimum {minimum budget can sufficient for such trip} budget for this trip,
             In little more and correct words in your way with use of emojies also (don't use the given same line, respond it in your way).
-
-            If all is fine and travel and trip plan is done then start with a green bold success msg "Here is your required plan!".
-            If something wrong happened and travel and trip plan not generated then start with a red bold error msg tell in that msg what related
-            wrong thing happend in your way and words within a single line , don't use emojies in it instead use correct and relevant punctuation marks
             """
       )
 
-    #st.success("Here is your required plan!")
+    st.success("Here is your required plan!")
     st.write(interaction.output_text)
 
