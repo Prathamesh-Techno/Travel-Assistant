@@ -77,8 +77,6 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-st.caption("Your personal travel planner")
-
 # All Inputs
 location = st.text_input("Enter your current location")
 destination = st.text_input("Enter your destination")
