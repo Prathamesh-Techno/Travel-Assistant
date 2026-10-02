@@ -1,5 +1,5 @@
 
-import streamlit as st 
+import streamlit as st
 from google import genai
 from dotenv import load_dotenv
 import time
@@ -41,9 +41,9 @@ st.markdown(
         margin-bottom: 5px;
     }
     .travel-title {
-        font-size: 3rem; 
-        margin: 0; 
-        font-weight: 800; 
+        font-size: 3rem;
+        margin: 0;
+        font-weight: 800;
         letter-spacing: 1px;
         font-family: 'Inter', sans-serif;
         background: linear-gradient(to right, #ffffff, #a8ff78);
@@ -117,35 +117,47 @@ if st.button("Plan Trip"):
             locations and available travel services in that area and from many ways of traveling & reaching to destiny,
             suggest user the nearest,fastest,safest and minmum costly way (tell estimate cost at each step).
 
-            Fourth, Total summary with budget estimation encluding travel and trip.It should contain both 
+            Fourth, Total summary with budget estimation encluding travel and trip.It should contain both
             Total estimeted budget and estimeted budget for per person.
-            
-            Don't give title to or divide answer in these phases just remember your response should contain these 
+
+            Don't give title to or divide answer in these phases just remember your response should contain these
             four things.Keep phases in a constant flow without knowing to user that answer is divided in four phases.
 
-            Share answer in bullet format and keep subheadings font size little 
-            big and include numbers as much as posible (Eg.,5days ,Rs.2000,1km (don't use these 
-            numbers and style it's just examples . Use perticular info related to given requirements)) 
-            keep response more engaging by using little relavent emojies the user should not be bored 
+            Share answer in bullet format and keep subheadings font size little
+            big and include numbers as much as posible (Eg.,5days ,Rs.2000,1km (don't use these
+            numbers and style it's just examples . Use perticular info related to given requirements))
+            keep response more engaging by using little relavent emojies the user should not be bored
             by too many words so keep your answer short but with covering all points smartly.
 
             Constraints :
             Don't give response using bad and harsh words,avoide adulte wording.
             Use cassual and simple language.
-            
+            Don't use technical words(language) related to coding and all.
+            If you have to use requirements in response then don't use it in "",instead keep the words bold.
+            Don't use travelers word directly in response , instead use the relevant word for travelers as per given requirements.
+
             Take care of these conditions :
-            If location and destination is same don't generate answer, politly respond like please give correct input, location and destination can't be same.
-            In little more and correct words in your way with use of emojies also (don't use the same line, respond it in your way).
-            If any required information is missing (contain None) in requirements don't generate answer, politly respond like please fill all the necessary information.
-            In little more and correct words in your way with use of emojies also (don't mention None in response and don't use the same line, respond it in your way).
-            If in any situation/way budget is insufficient then don't generate answer, politly respond like could you please uplift your budget a little more,
-            it's insufficient for ever posible way, you need minimum {minimum budget can sufficient for such trip} budget for this trip.
-            In little more and correct words in your way with use of emojies also (don't use the same line, respond it in your way).
+            If location and destination is same don't generate answer, politly respond like please give correct input, location and destination can't be same,
+            In little more and correct words in your way with use of emojies also (don't use the given same line, respond it in your way).
+            If any required information is missing (contain None) in requirements don't generate answer, politly respond like please fill all the necessary information,
+            In little more and correct words in your way with use of emojies also (don't mention None in response and don't use the given same line, respond it in your way).
             If you fill some satrange in given requirements then don't generate answer, politly tell what strange thing you feel and correct it
-            politly in little more and correct words in your way with use of emojies also (don't make user's fool/laugh)."""
+            politly in little more and correct words in your way with use of emojies also (don't make user's fool/laugh).
+            If budget type is budgeted then focus on saving money and fitting the trip in given budget while planing the trip and
+            for that suggest the affordable/minimum costly and nearest travelling way instead of fastest, suggest the minimum costly stay and all.
+            If budget type is moderate then focus on spending less money and fitting the trip in given budget while planing the trip and
+            for that suggest the affordable/minimum costly and nearest travelling way as per budget instead of fastest, suggest the minimum costly stay and all as per budget;
+            if budget is fine then don't compromise things and traveling time.
+            If in any situation/way budget is insufficient then don't generate answer, politly respond like could you please uplift your budget a little more,
+            it's insufficient for ever posible way, you need minimum {minimum budget can sufficient for such trip} budget for this trip,
+            In little more and correct words in your way with use of emojies also (don't use the given same line, respond it in your way).
+
+            If all is fine and travel and trip plan is done then start with a green bold success msg "Here is your required plan!".
+            If something wrong happened and travel and trip plan not generated then start with a red bold error msg tell in that msg what related
+            wrong thing happend in your way and words within a single line , don't use emojies in it instead use correct and relevant punctuation marks
+            """
       )
 
-    st.success("Here is your required plan!")
+    #st.success("Here is your required plan!")
     st.write(interaction.output_text)
-    
-    
+
