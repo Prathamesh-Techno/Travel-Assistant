@@ -128,7 +128,7 @@ if st.button("Plan Trip"):
             suggest user the nearest,fastest,safest and minmum costly way (tell estimate cost at each step).
 
             Fourth, Give Total summary of everything(Eg.,shoping,food,stay,rides,etc) with budget estimation encluding travel and trip.
-            It should contain both 1.Total estimeted budget and 2.Estimeted budget for per person only if travelers are more than 1;
+            It should also contain 1.Total estimeted budget and 2.Estimeted budget for per person only if travelers are more than 1;
             also in bullet format and add some little workds by you and make it feel person more happy and engaging (keep it short and covering all)
 
             Don't give title to or divide answer in these phases just remember your response should contain these
@@ -158,10 +158,6 @@ if st.button("Plan Trip"):
             If budget type is moderate then focus on spending less money and fitting the trip in given budget while planing the trip and
             for that suggest the affordable/minimum costly and nearest travelling way as per budget instead of fastest, suggest the minimum costly stay and all as per budget;
             if budget is fine then don't compromise things and traveling time.
-
-            Try to fit Total estimated cost with in budget(given in requirements) even if after all in any situation/way budget is insufficient then don't generate answer, politly respond like could you please uplift your budget a little more,
-            it's insufficient for ever posible way, you need minimum {minimum budget can sufficient for such trip} budget for this trip,
-            In little more and correct words in your way with use of emojies also (don't use the given same line, respond it in your way).
             """
       )
 
