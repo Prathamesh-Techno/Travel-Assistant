@@ -132,6 +132,8 @@ if st.button("Plan Trip"):
             Don't give title to or divide answer in these phases just remember your response should contain these
             four things.Keep phases in a constant flow without knowing to user that answer is divided in four phases.
 
+            If link is given in location or destination then analyse that link and behave like that in response.
+
             Share answer in bullet format and keep subheadings font size little
             big and include numbers as much as posible (Eg.,5days ,Rs.2000,1km (don't use these
             numbers and style it's just examples . Use perticular info related to given requirements))
