@@ -132,8 +132,6 @@ if st.button("Plan Trip"):
             Don't give title to or divide answer in these phases just remember your response should contain these
             four things.Keep phases in a constant flow without knowing to user that answer is divided in four phases.
 
-            If link is given in location or destination then analyse that link and behave like that in response.
-
             Share answer in bullet format and keep subheadings font size little
             big and include numbers as much as posible (Eg.,5days ,Rs.2000,1km (don't use these
             numbers and style it's just examples . Use perticular info related to given requirements))
@@ -157,6 +155,7 @@ if st.button("Plan Trip"):
             If budget type is moderate then focus on spending less money and try hard fitting the trip in given budget; for that while planing the trip and
             travel suggest the affordable/minimum costly and nearest travelling way as per budget instead of fastest, suggest the minimum costly stay and all as per budget;
             if budget is fine then don't compromise things and traveling time.
+            If link is provided in requirements don't generate answer, politly respond in little more and correct words in your way with use of emojies also (don't make user's fool/laugh).
             """
       )
 
