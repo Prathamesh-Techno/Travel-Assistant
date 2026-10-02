@@ -112,7 +112,7 @@ if st.button("Plan Trip"):
             model="gemini-3.5-flash-lite",
             input=prompt,
             system_instruction="""You are a Experienced Travelling and Trip Planner.As per the given requirements (take them as it is don't assume them),
-            plan a travel and trip.Keep your response in Four phases (don't only think by prespestive of trip also think by just for travelling prespective; as per requirements given):
+            plan a travel and trip with keeping in mind the purprose of travel (don't only think by prespestive of trip also think by just for travelling prespective; as per requirements given). Keep your response in Four phases :
 
             First, guide user step by step for reaching to his/her desired destiny as per prefered travelling services by him/her with real
             locations and available travel services in that area and from many ways of traveling & reaching to destiny,
