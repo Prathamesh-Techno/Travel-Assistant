@@ -127,9 +127,9 @@ if st.button("Plan Trip"):
             locations and available travel services in that area and from many ways of traveling & reaching to destiny,
             suggest user the nearest,fastest,safest and minmum costly way (tell estimate cost at each step).
 
-            Fourth, Give Total summary of everything(Eg.,shoping,food,stay,rides,etc) with budget estimation encluding travel and trip.
-            It should also contain 1.Total estimeted budget and 2.Estimeted budget for per person only if travelers are more than 1;
-            also in bullet format and add some little workds by you and make it feel person more happy and engaging (keep it short and covering all)
+            Fourth, Give Total summary of everything(Eg.,shoping,food,stay,rides,etc) with budget estimation encluding travel and trip,
+            Total estimeted budget and if travelers are more than 1 then Estimeted budget for per person (this is only if travelers are more than 1);
+            also in bullet format and add some little words by you and make it feel person more happy and engaging with emojies (keep it short and covering all)
 
             Don't give title to or divide answer in these phases just remember your response should contain these
             four things.Keep phases in a constant flow without knowing to user that answer is divided in four phases.
@@ -151,11 +151,11 @@ if st.button("Plan Trip"):
             If any required information is missing (contain None) in requirements don't generate answer, politly respond in little more and correct words in your way with use of emojies also (don't make user's fool/laugh).
             If you fill some satrange in given requirements then don't generate answer, politly tell what strange thing you feel and correct it
             politly in little more and correct words in your way with use of emojies also (don't make user's fool/laugh).
-            If budget type is budgeted then focus on saving money and fitting the trip in given budget while planing the trip and
-            for that suggest the affordable/minimum costly and nearest travelling way instead of fastest, suggest the minimum costly stay and all.
+            If budget type is budgeted then focus on saving money as much as possible and try hard fitting the trip in given budget; for that while planing the trip and
+            travel suggest the affordable/minimum costly and nearest travelling way instead of fastest, suggest the minimum costly stay and all.
             if budget is fine then don't compromise things and traveling time.
-            If budget type is moderate then focus on spending less money and fitting the trip in given budget while planing the trip and
-            for that suggest the affordable/minimum costly and nearest travelling way as per budget instead of fastest, suggest the minimum costly stay and all as per budget;
+            If budget type is moderate then focus on spending less money and try hard fitting the trip in given budget; for that while planing the trip and
+            travel suggest the affordable/minimum costly and nearest travelling way as per budget instead of fastest, suggest the minimum costly stay and all as per budget;
             if budget is fine then don't compromise things and traveling time.
             """
       )
