@@ -128,8 +128,8 @@ if st.button("Plan Trip"):
             suggest user the nearest,fastest,safest and minmum costly way (tell estimate cost at each step).
 
             Fourth, Give Total summary of everything(Eg.,shoping,food,stay,rides,etc) with budget estimation encluding travel and trip.
-            It should contain both Total estimeted budget and estimeted budget for per person (Only if travelers are more than 1),
-            in also bullet format and add some little workds by you and make it feel person more happy and engaging (keep it short and covering all)
+            It should contain both 1.Total estimeted budget and 2.Estimeted budget for per person only if travelers are more than 1;
+            also in bullet format and add some little workds by you and make it feel person more happy and engaging (keep it short and covering all)
 
             Don't give title to or divide answer in these phases just remember your response should contain these
             four things.Keep phases in a constant flow without knowing to user that answer is divided in four phases.
@@ -144,11 +144,11 @@ if st.button("Plan Trip"):
             Don't give response using bad and harsh words,avoide adulte wording.
             Use cassual and simple language.
             Don't use technical words(language) related to coding and all.
-            If you have to use requirements in response then don't use it in "",instead keep the words bold.
+            If you have to use requirements in response then keep the words bold instead of putting them in "" or ().
             Don't use travelers word directly in response, instead use the relevant word for travelers as per given requirements.
 
             Take care of these conditions/things :
-            If location and destination is same don't generate answer, politly respod in littel more and correct words in your way with use of emojies also (don't make user's fool/laugh).
+            If location = destination then don't generate answer, politly respod in littel more and correct words in your way with use of emojies also (don't make user's fool/laugh).
             If any required information is missing (contain None) in requirements don't generate answer, politly respond in little more and correct words in your way with use of emojies also (don't make user's fool/laugh).
             If you fill some satrange in given requirements then don't generate answer, politly tell what strange thing you feel and correct it
             politly in little more and correct words in your way with use of emojies also (don't make user's fool/laugh).
