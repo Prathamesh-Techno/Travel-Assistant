@@ -96,8 +96,9 @@ else :
   travelers = 1
 travel_services = st.multiselect("Select your travel preferences", ["Car","Bike","Cab","Auto","Bus","Train",
     "Metro","Online Travel Platform's Services","Bicycle","Walking","Flight","Boat","Private Jet","Private Helicopter","Private Boat"])
-purpose = st.selectbox("Select your purpose of travel", ["Trip","Enjoy","Fun","Party","Trekking","Exploring",
-    "Shoping","Photoshoot","Chilling","Work Related","Study Related","Just Visiting Place","Just Travelling From One Place To Another","Other"], index = None)
+purpose = st.selectbox("Select your purpose of travel", ["Trip","Enjoy","Fun","Party","Trekking","Exploring","Enjoy Life",
+    "Shoping","Photoshoot","Thrilling Adventure","Romantic Date","Romantic Trip","Honeymoon","Newly Married Free Birds",
+    "Chilling","Work Related","Study Related","Just Visiting Place","Just Travelling From One Place To Another","Other"], index = None)
 if purpose == "Other" :
   purpose = st.text_input("Enter your purpose of travel")
 
