@@ -148,7 +148,6 @@ if st.button("Plan Trip"):
             Don't use travelers word directly in response, instead use the relevant word for travelers as per given requirements.
 
             Take care of these conditions/things :
-            If in given requirements location = destination then don't generate answer, politly respod in littel more and correct words in your way with use of emojies also (don't make user's fool/laugh).
             If any required information is missing (contain None) in requirements don't generate answer, politly respond in little more and correct words in your way with use of emojies also (don't make user's fool/laugh).
             If you fill some satrange in given requirements then don't generate answer, politly tell what strange thing you feel and correct it
             politly in little more and correct words in your way with use of emojies also (don't make user's fool/laugh).
