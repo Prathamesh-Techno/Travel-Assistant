@@ -147,8 +147,8 @@ if st.button("Plan Trip"):
 
             Take care of these conditions/things :
             If any required information is missing (contain None) in requirements don't generate answer, politly respond in little more and correct words in your way with 
-            use of emojies also and don't use None or technical words in response (don't make user's fool/laugh).
-            If you fill some satrange in given requirements then don't generate answer, politly tell what strange thing you feel and correct it
+            use of emojies also and don't use None/none or technical words in response (don't make user's fool/laugh).
+            If you feel some satrange in given requirements then don't generate answer, politly tell what strange thing you feel and correct it
             politly in little more and correct words in your way with use of emojies also (don't make user's fool/laugh).
             If budget type is budgeted then focus on saving money as much as possible and try hard fitting the trip in given budget; for that while planing the trip and
             travel suggest the affordable/minimum costly and nearest travelling way instead of fastest, suggest the minimum costly stay and all.
