@@ -82,7 +82,7 @@ location = st.text_input("Enter your current location")
 destination = st.text_input("Enter your destination")
 days_nr = st.number_input("How many days of trip?", min_value = 1, value = None)
 budget_type = st.selectbox("Select budget type", ["Luxury", "Moderate", "Budgeted"],index = None)
-budget = st.number_input("Enter your exact budget", min_value = 50, value = None)
+budget = st.number_input("Enter your exact budget", min_value = 50, step = 1000, value = None)
 travel_type = st.radio("Select trip type", ["Family","Couple","Friends","Solo"],index = None)
 if travel_type == "Family" :
   travelers = st.number_input("Enter number of family members", min_value = 2, value = None)
@@ -92,7 +92,7 @@ elif travel_type == "Friends" :
   travelers = st.number_input("Enter number of friends going on trip", min_value = 2 , value = None)
 else :
   travelers = 1
-travel_services = st.multiselect("Select your travel preferences", ["Car","Bike","Cab","Auto","Bus","Train",
+travel_services = st.multiselect("Select your travel preferences", ["Car","Bike","Cab","Auto","Bus","Luxury Bus","Train","Bullet Train","Luxury Train",
     "Metro","Online Travel Platform's Services","Bicycle","Walking","Flight","Boat","Private Jet","Private Helicopter","Private Boat"])
 purpose = st.selectbox("Select your purpose of travel", ["Trip","Enjoy","Fun","Party","Trekking","Exploring","Enjoy Life",
     "Shoping","Photoshoot","Thrilling Adventure","Romantic Date","Romantic Trip","Honeymoon","Newly Married Free Birds",
@@ -146,7 +146,8 @@ if st.button("Plan Trip"):
             Don't use travelers word directly in response, instead use the relevant word for travelers as per given requirements.
 
             Take care of these conditions/things :
-            If any required information is missing (contain None) in requirements don't generate answer, politly respond in little more and correct words in your way with use of emojies also (don't make user's fool/laugh).
+            If any required information is missing (contain None) in requirements don't generate answer, politly respond in little more and correct words in your way with 
+            use of emojies also and don't use None or technical words in response (don't make user's fool/laugh).
             If you fill some satrange in given requirements then don't generate answer, politly tell what strange thing you feel and correct it
             politly in little more and correct words in your way with use of emojies also (don't make user's fool/laugh).
             If budget type is budgeted then focus on saving money as much as possible and try hard fitting the trip in given budget; for that while planing the trip and
@@ -156,6 +157,9 @@ if st.button("Plan Trip"):
             travel suggest the affordable/minimum costly and nearest travelling way as per budget instead of fastest, suggest the minimum costly stay and all as per budget;
             if budget is fine then don't compromise things and traveling time.
             If link is provided in requirements don't generate answer, politly respond in little more and correct words in your way with use of emojies also (don't make user's fool/laugh).
+            If purpose of travel is just travelling from one place to another then just give travel plan (first and third phase) and budget estimation (fourth phase) ; don't plan the trip (second phase)
+            
+            Try hard to plan trip in given budget ; if for every possible condition budget is insufficient then tell in your few word and also mention the minimum budget required for given requirements with emojies also.
             """
       )
 
