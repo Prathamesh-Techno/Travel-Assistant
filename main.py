@@ -156,17 +156,11 @@ if st.button("Plan Trip"):
             If budget type is moderate then focus on spending less money and try hard fitting the trip in given budget; for that while planing the trip and
             travel suggest the affordable/minimum costly and nearest travelling way as per budget instead of fastest, suggest the minimum costly stay and all as per budget;
             if budget is fine then don't compromise things and traveling time.
-            If link is provided in requirements then use tool google search and then proceed like that further.
+            If link is provided in requirements don't generate answer, politly respond in your few and correct words with emojies also (don't make user's fool/laugh).
             If purpose of travel is just travelling from one place to another then just give travel plan (first and third phase) and budget estimation (fourth phase) ; don't plan the trip (second phase)
 
             Try hard to plan trip in given budget ; if for every possible condition budget is insufficient then tell in your few word and also mention the minimum budget required for given requirements with emojies also.
             """,
-            
-            tools = [
-                {
-                    "type" : "google_search"
-                }
-            ],
 
             generation_config = {
                 "thinking_level" : "high"
