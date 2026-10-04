@@ -161,11 +161,16 @@ if st.button("Plan Trip"):
 
             Try hard to plan trip in given budget ; if for every possible condition budget is insufficient then tell in your few word and also mention the minimum budget required for given requirements with emojies also.
             """,
+            
             tools = [
                 {
                     "type" : "google_search"
                 }
-            ]
+            ],
+
+            generation_config = {
+                "thinking_level" : "high"
+            }
       )
 
     st.success("Here is your required plan!")
