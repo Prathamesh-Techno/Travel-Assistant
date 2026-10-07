@@ -133,7 +133,7 @@ if st.button("Plan Trip"):
             four things.Keep phases in a constant flow without knowing to user that answer is divided in four phases.
 
             Share answer in bullet format and keep subheadings font size little
-            big and include numbers as much as posible (Eg.,5days ,Rs.2000,1km (don't use these
+            big contain emojies also and include numbers as much as posible (Eg.,5days ,Rs.2000,1km (don't use these
             numbers and style it's just examples . Use perticular info related to given requirements))
             keep response more engaging by using little relavent emojies the user should not be bored
             by too many words so keep your answer short but with covering all points smartly.
@@ -169,4 +169,3 @@ if st.button("Plan Trip"):
 
     st.success("Here is your required plan!")
     st.write(interaction.output_text)
-
