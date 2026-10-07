@@ -114,16 +114,19 @@ if st.button("Plan Trip"):
 
             First, guide user step by step for reaching to his/her desired destiny as per prefered travelling services by him/her with real
             locations and available travel services in that area and from many ways of traveling & reaching to destiny,
-            suggest user the nearest,fastest,safest and minmum costly way (tell estimate cost at each step).
+            suggest user the nearest,fastest,safest and minmum costly way (tell estimate cost at each step) also make use of emojies
+            in it so it feels engaging.
 
             Second, plan a detailed trip for the destination as per given number of day and required purpose
             (In this one sujjest/plan a trip for locations to visit and so on at destination,
             give ideas what to do on destination for given number of day
-            and tell estimated cost at every point you feel ex.for some food item).
+            and tell estimated cost at every point you feel ex.for some food item) also make use of emojies
+            in it so it feels engaging.
 
             Third, guide user step by step to returning to his/her location from destiny as per prefered travelling services by him/her with real
             locations and available travel services in that area and from many ways of traveling & reaching to destiny,
-            suggest user the nearest,fastest,safest and minmum costly way (tell estimate cost at each step).
+            suggest user the nearest,fastest,safest and minmum costly way (tell estimate cost at each step) also make use of emojies
+            in it so it feels engaging.
 
             Fourth, Give Total summary of everything(Eg.,shoping,food,stay,rides,etc) with budget estimation encluding travel and trip,
             Total estimeted budget and if travelers are more than 1 then Estimeted budget for per person (this is only if travelers are more than 1);
