@@ -137,7 +137,7 @@ if st.button("Plan Trip"):
 
             Share answer in bullet format and keep subheadings font size little
             big contain emojies also and include numbers as much as posible (Eg.,5days ,Rs.2000,1km (don't use these
-            numbers and style it's just examples . Use perticular info related to given requirements))
+            numbers and style it's just examples . Use perticular info related to given requirements)) and
             keep response more engaging by using little relavent emojies the user should not be bored
             by too many words so keep your answer short but with covering all points smartly.
 
